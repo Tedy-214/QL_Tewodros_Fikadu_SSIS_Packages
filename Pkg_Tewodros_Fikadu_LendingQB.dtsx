@@ -11,11 +11,29 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{0258B56C-0FD2-47DD-AA74-425B0784EA8F}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F126EC82-F4AB-48AD-AA0D-018537E2CD38}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DBF2FE6F-794E-43BF-8702-CCF65B5203E3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varBody">
+      <DTS:VariableValue
+        DTS:DataType="8">This Packaage Run Succesfully </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AC6185EE-66AD-4B68-B09F-3DA97B28EC3B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varDeleteLendingQBRecord">
+      <DTS:VariableValue
+        DTS:DataType="8">DELETE FROM Stg_Tewodros_Fikadu_QL</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{27EE2CB6-D90A-40CE-940D-97012EA3738C}"
@@ -27,12 +45,40 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{95EEFB38-68C5-4533-A5DD-0BD9E91EE0AB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varInsertIntoEtlLog">
+      <DTS:VariableValue
+        DTS:DataType="8">INSERT INTO [dbo].[QL_Tewodros_Fikadu_ETL_Log]            ([PackageID]            ,[PackageName]            ,[SourceName]            ,[RunTime]            ,[RunBy]            ,[NumberOfRowsInserted]            ,[MaxLastModifiedDateInserted])      VALUES            (?,?,?,?,?,?,?)</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1688CBFA-B43A-42B6-A1EB-03F3FF7B70C2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varMaxLastModifiedDate">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{FDEE6BD8-E2DB-4C1F-B0BF-446A810E1296}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="varPassword">
       <DTS:VariableValue
         DTS:DataType="8">datapull123@1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9ECD3652-1572-4A27-BBE6-943A296BF2F0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varRowCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -54,13 +100,41 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{65CA35E9-A7E4-4DB7-A610-477C862DF3FE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varSourceName">
+      <DTS:VariableValue
+        DTS:DataType="8">LendingQB</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{ECBDE669-0A4C-4BF9-8196-1585221F5C6F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="varSubject">
       <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
+        DTS:DataType="8">Package Completed Succesfully</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{633DB519-985B-42A6-BB6D-53E2ED8F62FA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varSubjectError">
+      <DTS:VariableValue
+        DTS:DataType="8">Error Message </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F238FF44-3C54-4CA6-AF6E-48E9885F9C62}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="GETDATE()"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varTimeStamp">
+      <DTS:VariableValue
+        DTS:DataType="7">9/5/2020 2:23:23 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -72,7 +146,2781 @@
         DTS:DataType="8">gletllteam@gmail.com</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C351B369-8C7C-4692-B267-4852ED358138}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[BorrFirstName]"
+                      cachedDataType="nText"
+                      cachedName="BorrFirstName"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrFirstName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[BorrLastName]"
+                      cachedDataType="nText"
+                      cachedName="BorrLastName"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrLastName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Ignore]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Ignore"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(DT_WSTR,50)#{Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrFirstName]} == "Test" || (DT_WSTR,50)#{Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrLastName]} == "Test"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(DT_WSTR,50)BorrFirstName == "Test" || (DT_WSTR,50)BorrLastName == "Test"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Keep]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Keep"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OData Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="OData Source Component;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Read data from OData services"
+              name="OData Source"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Name of the collection to be retrieved from the service."
+                  expressionType="Notify"
+                  name="CollectionName">QL_Loans</property>
+                <property
+                  dataType="System.Int32"
+                  description="The default maximum length for a string that has no maxlength specified in the schema."
+                  name="DefaultStringLength">4000</property>
+                <property
+                  dataType="System.String"
+                  description="Query in the url. "
+                  expressionType="Notify"
+                  name="Query"></property>
+                <property
+                  dataType="System.String"
+                  description="Resource path of the collection to be retrieved from the service."
+                  expressionType="Notify"
+                  name="ResourcePath"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="When set to true, use the resource path as requested collection; otherwise, use the collection name."
+                  expressionType="Notify"
+                  name="UseResourcePath">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.OData</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OData Source.Connections[Connection]"
+                  connectionManagerID="{B19E71A2-5006-491B-8F41-F422031D8201}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OData Source]"
+                  description="Connection to OData Service"
+                  name="Connection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OData Source.Outputs[Output]"
+                  name="Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LastLoadDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LastLoadDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LastLoadDate]"
+                      name="LastLoadDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LeadSource]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LeadSource]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LeadSource]"
+                      name="LeadSource"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanID]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanID]"
+                      name="LoanID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LeadID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LeadID]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LeadID]"
+                      name="LeadID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrFirstName]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrFirstName]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrFirstName]"
+                      name="BorrFirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrLastName]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrLastName]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrLastName]"
+                      name="BorrLastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrBirthDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrBirthDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrBirthDate]"
+                      name="BorrBirthDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrGender]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrGender]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrGender]"
+                      name="BorrGender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrEmailAddress]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrEmailAddress]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrEmailAddress]"
+                      name="BorrEmailAddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrAddress]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrAddress]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrAddress]"
+                      name="BorrAddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrCity]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrCity]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrCity]"
+                      name="BorrCity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrState]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrState]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrState]"
+                      name="BorrState"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrZip]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrZip]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrZip]"
+                      name="BorrZip"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrNoYearsOnJob]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrNoYearsOnJob]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorrNoYearsOnJob]"
+                      name="BorrNoYearsOnJob"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorTotalIncome]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorTotalIncome]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BorTotalIncome]"
+                      name="BorTotalIncome"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanOfficerEmail]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanOfficerEmail]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanOfficerEmail]"
+                      name="LoanOfficerEmail"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[OfficeID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[OfficeID]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[OfficeID]"
+                      name="OfficeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[IntialLoanAmount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[IntialLoanAmount]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[IntialLoanAmount]"
+                      name="IntialLoanAmount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[IsBorrSelfEmployeeFlag]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[IsBorrSelfEmployeeFlag]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[IsBorrSelfEmployeeFlag]"
+                      name="IsBorrSelfEmployeeFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanOfficer]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanOfficer]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanOfficer]"
+                      name="LoanOfficer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[TotalLoanAmt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[TotalLoanAmt]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[TotalLoanAmt]"
+                      name="TotalLoanAmt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[Net_Buy_Price]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Net_Buy_Price]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[Net_Buy_Price]"
+                      name="Net_Buy_Price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[TopQualificationRatios]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[TopQualificationRatios]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[TopQualificationRatios]"
+                      name="TopQualificationRatios"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BottomQualificationRatios]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BottomQualificationRatios]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[BottomQualificationRatios]"
+                      name="BottomQualificationRatios"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanToValueRatio]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanToValueRatio]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanToValueRatio]"
+                      name="LoanToValueRatio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[CombinedLoanToValueRatio]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[CombinedLoanToValueRatio]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[CombinedLoanToValueRatio]"
+                      name="CombinedLoanToValueRatio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InterstRate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InterstRate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InterstRate]"
+                      name="InterstRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[AppraisedValue]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[AppraisedValue]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[AppraisedValue]"
+                      name="AppraisedValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[AnnualPercentageRate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[AnnualPercentageRate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[AnnualPercentageRate]"
+                      name="AnnualPercentageRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[HouseOnSaleStreet]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[HouseOnSaleStreet]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[HouseOnSaleStreet]"
+                      name="HouseOnSaleStreet"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[HouseOnSaleState]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[HouseOnSaleState]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[HouseOnSaleState]"
+                      name="HouseOnSaleState"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[HouseOnSaleZip]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[HouseOnSaleZip]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[HouseOnSaleZip]"
+                      name="HouseOnSaleZip"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanProgram]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanProgram]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanProgram]"
+                      name="LoanProgram"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[AmortizationType]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[AmortizationType]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[AmortizationType]"
+                      name="AmortizationType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanTerm]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanTerm]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanTerm]"
+                      name="LoanTerm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[CreditPullDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[CreditPullDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[CreditPullDate]"
+                      name="CreditPullDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[FinallCreditScore]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[FinallCreditScore]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[FinallCreditScore]"
+                      name="FinallCreditScore"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[UnderwriterRiskAssess]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[UnderwriterRiskAssess]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[UnderwriterRiskAssess]"
+                      name="UnderwriterRiskAssess"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanType]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanType]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanType]"
+                      name="LoanType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanPurpose]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanPurpose]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanPurpose]"
+                      name="LoanPurpose"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[MilestoneStatus]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[MilestoneStatus]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[MilestoneStatus]"
+                      name="MilestoneStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[CurrentMilestone]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[CurrentMilestone]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[CurrentMilestone]"
+                      name="CurrentMilestone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanStatus]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanStatus]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanStatus]"
+                      name="LoanStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LeadDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LeadDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LeadDate]"
+                      name="LeadDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApplicationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApplicationDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApplicationDate]"
+                      name="ApplicationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LockDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LockDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LockDate]"
+                      name="LockDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LockExpireDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LockExpireDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LockExpireDate]"
+                      name="LockExpireDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanStatusActionDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanStatusActionDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanStatusActionDate]"
+                      name="LoanStatusActionDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[FundedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[FundedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[FundedDate]"
+                      name="FundedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanExpirationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanExpirationDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanExpirationDate]"
+                      name="LoanExpirationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanInformationDocumentDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanInformationDocumentDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanInformationDocumentDate]"
+                      name="LoanInformationDocumentDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InitialDisclosureProvidedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InitialDisclosureProvidedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InitialDisclosureProvidedDate]"
+                      name="InitialDisclosureProvidedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[CurrentMilestoneTrackingDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[CurrentMilestoneTrackingDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[CurrentMilestoneTrackingDate]"
+                      name="CurrentMilestoneTrackingDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApplicationReturnedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApplicationReturnedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApplicationReturnedDate]"
+                      name="ApplicationReturnedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApprovalDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApprovalDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApprovalDate]"
+                      name="ApprovalDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ConditionalApprovalDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ConditionalApprovalDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ConditionalApprovalDate]"
+                      name="ConditionalApprovalDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ConditionsReceivedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ConditionsReceivedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ConditionsReceivedDate]"
+                      name="ConditionsReceivedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentPreparedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentPreparedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentPreparedDate]"
+                      name="DocumentPreparedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentSigningDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentSigningDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentSigningDate]"
+                      name="DocumentSigningDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[FinalDocumentDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[FinalDocumentDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[FinalDocumentDate]"
+                      name="FinalDocumentDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanSetupDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanSetupDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[LoanSetupDate]"
+                      name="LoanSetupDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[EstimatedLoanClosingDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[EstimatedLoanClosingDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[EstimatedLoanClosingDate]"
+                      name="EstimatedLoanClosingDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ActualClosingDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ActualClosingDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ActualClosingDate]"
+                      name="ActualClosingDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ProcessingDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ProcessingDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ProcessingDate]"
+                      name="ProcessingDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentResubmittedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentResubmittedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentResubmittedDate]"
+                      name="DocumentResubmittedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentReviewedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentReviewedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentReviewedDate]"
+                      name="DocumentReviewedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentShippingDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentShippingDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentShippingDate]"
+                      name="DocumentShippingDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApplicationStartedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApplicationStartedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApplicationStartedDate]"
+                      name="ApplicationStartedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentSubmittalDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentSubmittalDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DocumentSubmittalDate]"
+                      name="DocumentSubmittalDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[UnderwrittingReceivedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[UnderwrittingReceivedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[UnderwrittingReceivedDate]"
+                      name="UnderwrittingReceivedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InitialClosingDisclosureSentDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InitialClosingDisclosureSentDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InitialClosingDisclosureSentDate]"
+                      name="InitialClosingDisclosureSentDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InitialLoanEstimateSentDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InitialLoanEstimateSentDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InitialLoanEstimateSentDate]"
+                      name="InitialLoanEstimateSentDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InitialLoanEstimateDueDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InitialLoanEstimateDueDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[InitialLoanEstimateDueDate]"
+                      name="InitialLoanEstimateDueDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ClosingDisclosureRecievedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ClosingDisclosureRecievedDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ClosingDisclosureRecievedDate]"
+                      name="ClosingDisclosureRecievedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DisbursementDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DisbursementDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DisbursementDate]"
+                      name="DisbursementDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DenialDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DenialDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[DenialDate]"
+                      name="DenialDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[QAFailDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[QAFailDate]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[QAFailDate]"
+                      name="QAFailDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[IsConstructionLoan]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[IsConstructionLoan]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[IsConstructionLoan]"
+                      name="IsConstructionLoan"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApprovalStatus]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApprovalStatus]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[ApprovalStatus]"
+                      name="ApprovalStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[PropertyOccupancyType]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[PropertyOccupancyType]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[PropertyOccupancyType]"
+                      name="PropertyOccupancyType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[Closer_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Closer_Name]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[Closer_Name]"
+                      name="Closer_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[Loan_Processor_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Loan_Processor_Name]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[Loan_Processor_Name]"
+                      name="Loan_Processor_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[Underwriter_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Underwriter_Name]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[Underwriter_Name]"
+                      name="Underwriter_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[MarketSource]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[MarketSource]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[MarketSource]"
+                      name="MarketSource"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[QAStatus]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[QAStatus]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[QAStatus]"
+                      name="QAStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[MortgageInsuranceCompany]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[MortgageInsuranceCompany]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[MortgageInsuranceCompany]"
+                      name="MortgageInsuranceCompany"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[TotalFees]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[TotalFees]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[TotalFees]"
+                      name="TotalFees"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[OriginationFee]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[OriginationFee]"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[OriginationFee]"
+                      name="OriginationFee"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ContentTypeID]"
+                      dataType="nText"
+                      name="ContentTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Title]"
+                      dataType="nText"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ComplianceAssetId]"
+                      dataType="nText"
+                      name="ComplianceAssetId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LastLoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LastLoadDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LeadSource]"
+                      dataType="nText"
+                      name="LeadSource" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanID]"
+                      dataType="nText"
+                      name="LoanID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LeadID]"
+                      dataType="nText"
+                      name="LeadID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrFirstName]"
+                      dataType="nText"
+                      name="BorrFirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrLastName]"
+                      dataType="nText"
+                      name="BorrLastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrBirthDate]"
+                      dataType="dbTimeStamp"
+                      name="BorrBirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrGender]"
+                      dataType="nText"
+                      name="BorrGender" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrEmailAddress]"
+                      dataType="nText"
+                      name="BorrEmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrAddress]"
+                      dataType="nText"
+                      name="BorrAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrCity]"
+                      dataType="nText"
+                      name="BorrCity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrState]"
+                      dataType="nText"
+                      name="BorrState" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrZip]"
+                      dataType="nText"
+                      name="BorrZip" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorrNoYearsOnJob]"
+                      dataType="r8"
+                      name="BorrNoYearsOnJob" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BorTotalIncome]"
+                      dataType="r8"
+                      name="BorTotalIncome" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanOfficerEmail]"
+                      dataType="nText"
+                      name="LoanOfficerEmail" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[OfficeID]"
+                      dataType="nText"
+                      name="OfficeID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[IntialLoanAmount]"
+                      dataType="r8"
+                      name="IntialLoanAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[IsBorrSelfEmployeeFlag]"
+                      dataType="nText"
+                      name="IsBorrSelfEmployeeFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanOfficer]"
+                      dataType="nText"
+                      name="LoanOfficer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[TotalLoanAmt]"
+                      dataType="r8"
+                      name="TotalLoanAmt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Net_Buy_Price]"
+                      dataType="r8"
+                      name="Net_Buy_Price" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[TopQualificationRatios]"
+                      dataType="r8"
+                      name="TopQualificationRatios" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[BottomQualificationRatios]"
+                      dataType="r8"
+                      name="BottomQualificationRatios" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanToValueRatio]"
+                      dataType="r8"
+                      name="LoanToValueRatio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[CombinedLoanToValueRatio]"
+                      dataType="r8"
+                      name="CombinedLoanToValueRatio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InterstRate]"
+                      dataType="r8"
+                      name="InterstRate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[AppraisedValue]"
+                      dataType="r8"
+                      name="AppraisedValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[AnnualPercentageRate]"
+                      dataType="r8"
+                      name="AnnualPercentageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[HouseOnSaleStreet]"
+                      dataType="nText"
+                      name="HouseOnSaleStreet" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[HouseOnSaleState]"
+                      dataType="nText"
+                      name="HouseOnSaleState" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[HouseOnSaleZip]"
+                      dataType="nText"
+                      name="HouseOnSaleZip" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanProgram]"
+                      dataType="nText"
+                      name="LoanProgram" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[AmortizationType]"
+                      dataType="nText"
+                      name="AmortizationType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanTerm]"
+                      dataType="r8"
+                      name="LoanTerm" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[CreditPullDate]"
+                      dataType="dbTimeStamp"
+                      name="CreditPullDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[FinallCreditScore]"
+                      dataType="r8"
+                      name="FinallCreditScore" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[UnderwriterRiskAssess]"
+                      dataType="nText"
+                      name="UnderwriterRiskAssess" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanType]"
+                      dataType="nText"
+                      name="LoanType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanPurpose]"
+                      dataType="nText"
+                      name="LoanPurpose" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[MilestoneStatus]"
+                      dataType="nText"
+                      name="MilestoneStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[CurrentMilestone]"
+                      dataType="nText"
+                      name="CurrentMilestone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanStatus]"
+                      dataType="nText"
+                      name="LoanStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LeadDate]"
+                      dataType="dbTimeStamp"
+                      name="LeadDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApplicationDate]"
+                      dataType="dbTimeStamp"
+                      name="ApplicationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LockDate]"
+                      dataType="dbTimeStamp"
+                      name="LockDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LockExpireDate]"
+                      dataType="dbTimeStamp"
+                      name="LockExpireDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanStatusActionDate]"
+                      dataType="dbTimeStamp"
+                      name="LoanStatusActionDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[FundedDate]"
+                      dataType="dbTimeStamp"
+                      name="FundedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanExpirationDate]"
+                      dataType="dbTimeStamp"
+                      name="LoanExpirationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanInformationDocumentDate]"
+                      dataType="dbTimeStamp"
+                      name="LoanInformationDocumentDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InitialDisclosureProvidedDate]"
+                      dataType="dbTimeStamp"
+                      name="InitialDisclosureProvidedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[CurrentMilestoneTrackingDate]"
+                      dataType="dbTimeStamp"
+                      name="CurrentMilestoneTrackingDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApplicationReturnedDate]"
+                      dataType="dbTimeStamp"
+                      name="ApplicationReturnedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApprovalDate]"
+                      dataType="dbTimeStamp"
+                      name="ApprovalDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ConditionalApprovalDate]"
+                      dataType="dbTimeStamp"
+                      name="ConditionalApprovalDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ConditionsReceivedDate]"
+                      dataType="dbTimeStamp"
+                      name="ConditionsReceivedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentPreparedDate]"
+                      dataType="dbTimeStamp"
+                      name="DocumentPreparedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentSigningDate]"
+                      dataType="dbTimeStamp"
+                      name="DocumentSigningDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[FinalDocumentDate]"
+                      dataType="dbTimeStamp"
+                      name="FinalDocumentDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[LoanSetupDate]"
+                      dataType="dbTimeStamp"
+                      name="LoanSetupDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[EstimatedLoanClosingDate]"
+                      dataType="dbTimeStamp"
+                      name="EstimatedLoanClosingDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ActualClosingDate]"
+                      dataType="dbTimeStamp"
+                      name="ActualClosingDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ProcessingDate]"
+                      dataType="dbTimeStamp"
+                      name="ProcessingDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentResubmittedDate]"
+                      dataType="dbTimeStamp"
+                      name="DocumentResubmittedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentReviewedDate]"
+                      dataType="dbTimeStamp"
+                      name="DocumentReviewedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentShippingDate]"
+                      dataType="dbTimeStamp"
+                      name="DocumentShippingDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApplicationStartedDate]"
+                      dataType="dbTimeStamp"
+                      name="ApplicationStartedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DocumentSubmittalDate]"
+                      dataType="dbTimeStamp"
+                      name="DocumentSubmittalDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[UnderwrittingReceivedDate]"
+                      dataType="dbTimeStamp"
+                      name="UnderwrittingReceivedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InitialClosingDisclosureSentDate]"
+                      dataType="dbTimeStamp"
+                      name="InitialClosingDisclosureSentDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InitialLoanEstimateSentDate]"
+                      dataType="dbTimeStamp"
+                      name="InitialLoanEstimateSentDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[InitialLoanEstimateDueDate]"
+                      dataType="dbTimeStamp"
+                      name="InitialLoanEstimateDueDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ClosingDisclosureRecievedDate]"
+                      dataType="dbTimeStamp"
+                      name="ClosingDisclosureRecievedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DisbursementDate]"
+                      dataType="dbTimeStamp"
+                      name="DisbursementDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[DenialDate]"
+                      dataType="dbTimeStamp"
+                      name="DenialDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[QAFailDate]"
+                      dataType="dbTimeStamp"
+                      name="QAFailDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[IsConstructionLoan]"
+                      dataType="nText"
+                      name="IsConstructionLoan" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ApprovalStatus]"
+                      dataType="nText"
+                      name="ApprovalStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[PropertyOccupancyType]"
+                      dataType="nText"
+                      name="PropertyOccupancyType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Closer_Name]"
+                      dataType="nText"
+                      name="Closer_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Loan_Processor_Name]"
+                      dataType="nText"
+                      name="Loan_Processor_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Underwriter_Name]"
+                      dataType="nText"
+                      name="Underwriter_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[MarketSource]"
+                      dataType="nText"
+                      name="MarketSource" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[QAStatus]"
+                      dataType="nText"
+                      name="QAStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[MortgageInsuranceCompany]"
+                      dataType="nText"
+                      name="MortgageInsuranceCompany" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[TotalFees]"
+                      dataType="r8"
+                      name="TotalFees" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[OriginationFee]"
+                      dataType="r8"
+                      name="OriginationFee" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ContentType]"
+                      dataType="nText"
+                      name="ContentType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Modified]"
+                      dataType="dbTimeStamp"
+                      name="Modified" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Created]"
+                      dataType="dbTimeStamp"
+                      name="Created" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[CreatedById]"
+                      dataType="i4"
+                      name="CreatedById" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[ModifiedById]"
+                      dataType="i4"
+                      name="ModifiedById" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Owshiddenversion]"
+                      dataType="i4"
+                      name="Owshiddenversion" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Version]"
+                      dataType="nText"
+                      name="Version" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Output].ExternalColumns[Path]"
+                      dataType="nText"
+                      name="Path" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OData Source.Outputs[Error output]"
+                  isErrorOut="true"
+                  name="Error output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ContentTypeID]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ContentTypeID]"
+                      name="ContentTypeID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Title]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ComplianceAssetId]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ComplianceAssetId]"
+                      name="ComplianceAssetId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LastLoadDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LastLoadDate]"
+                      name="LastLoadDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LeadSource]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LeadSource]"
+                      name="LeadSource" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanID]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanID]"
+                      name="LoanID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LeadID]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LeadID]"
+                      name="LeadID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrFirstName]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrFirstName]"
+                      name="BorrFirstName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrLastName]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrLastName]"
+                      name="BorrLastName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrBirthDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrBirthDate]"
+                      name="BorrBirthDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrGender]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrGender]"
+                      name="BorrGender" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrEmailAddress]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrEmailAddress]"
+                      name="BorrEmailAddress" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrAddress]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrAddress]"
+                      name="BorrAddress" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrCity]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrCity]"
+                      name="BorrCity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrState]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrState]"
+                      name="BorrState" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrZip]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrZip]"
+                      name="BorrZip" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrNoYearsOnJob]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorrNoYearsOnJob]"
+                      name="BorrNoYearsOnJob" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorTotalIncome]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BorTotalIncome]"
+                      name="BorTotalIncome" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanOfficerEmail]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanOfficerEmail]"
+                      name="LoanOfficerEmail" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[OfficeID]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[OfficeID]"
+                      name="OfficeID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[IntialLoanAmount]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[IntialLoanAmount]"
+                      name="IntialLoanAmount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[IsBorrSelfEmployeeFlag]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[IsBorrSelfEmployeeFlag]"
+                      name="IsBorrSelfEmployeeFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanOfficer]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanOfficer]"
+                      name="LoanOfficer" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[TotalLoanAmt]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[TotalLoanAmt]"
+                      name="TotalLoanAmt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Net_Buy_Price]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Net_Buy_Price]"
+                      name="Net_Buy_Price" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[TopQualificationRatios]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[TopQualificationRatios]"
+                      name="TopQualificationRatios" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BottomQualificationRatios]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[BottomQualificationRatios]"
+                      name="BottomQualificationRatios" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanToValueRatio]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanToValueRatio]"
+                      name="LoanToValueRatio" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CombinedLoanToValueRatio]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CombinedLoanToValueRatio]"
+                      name="CombinedLoanToValueRatio" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InterstRate]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InterstRate]"
+                      name="InterstRate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[AppraisedValue]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[AppraisedValue]"
+                      name="AppraisedValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[AnnualPercentageRate]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[AnnualPercentageRate]"
+                      name="AnnualPercentageRate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[HouseOnSaleStreet]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[HouseOnSaleStreet]"
+                      name="HouseOnSaleStreet" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[HouseOnSaleState]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[HouseOnSaleState]"
+                      name="HouseOnSaleState" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[HouseOnSaleZip]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[HouseOnSaleZip]"
+                      name="HouseOnSaleZip" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanProgram]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanProgram]"
+                      name="LoanProgram" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[AmortizationType]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[AmortizationType]"
+                      name="AmortizationType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanTerm]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanTerm]"
+                      name="LoanTerm" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CreditPullDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CreditPullDate]"
+                      name="CreditPullDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[FinallCreditScore]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[FinallCreditScore]"
+                      name="FinallCreditScore" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[UnderwriterRiskAssess]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[UnderwriterRiskAssess]"
+                      name="UnderwriterRiskAssess" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanType]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanType]"
+                      name="LoanType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanPurpose]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanPurpose]"
+                      name="LoanPurpose" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[MilestoneStatus]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[MilestoneStatus]"
+                      name="MilestoneStatus" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CurrentMilestone]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CurrentMilestone]"
+                      name="CurrentMilestone" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanStatus]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanStatus]"
+                      name="LoanStatus" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LeadDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LeadDate]"
+                      name="LeadDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApplicationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApplicationDate]"
+                      name="ApplicationDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LockDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LockDate]"
+                      name="LockDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LockExpireDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LockExpireDate]"
+                      name="LockExpireDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LastModifiedDate]"
+                      name="LastModifiedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanStatusActionDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanStatusActionDate]"
+                      name="LoanStatusActionDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[FundedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[FundedDate]"
+                      name="FundedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanExpirationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanExpirationDate]"
+                      name="LoanExpirationDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanInformationDocumentDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanInformationDocumentDate]"
+                      name="LoanInformationDocumentDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InitialDisclosureProvidedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InitialDisclosureProvidedDate]"
+                      name="InitialDisclosureProvidedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CurrentMilestoneTrackingDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CurrentMilestoneTrackingDate]"
+                      name="CurrentMilestoneTrackingDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApplicationReturnedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApplicationReturnedDate]"
+                      name="ApplicationReturnedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApprovalDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApprovalDate]"
+                      name="ApprovalDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ConditionalApprovalDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ConditionalApprovalDate]"
+                      name="ConditionalApprovalDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ConditionsReceivedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ConditionsReceivedDate]"
+                      name="ConditionsReceivedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentPreparedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentPreparedDate]"
+                      name="DocumentPreparedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentSigningDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentSigningDate]"
+                      name="DocumentSigningDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[FinalDocumentDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[FinalDocumentDate]"
+                      name="FinalDocumentDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanSetupDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[LoanSetupDate]"
+                      name="LoanSetupDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[EstimatedLoanClosingDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[EstimatedLoanClosingDate]"
+                      name="EstimatedLoanClosingDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ActualClosingDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ActualClosingDate]"
+                      name="ActualClosingDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ProcessingDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ProcessingDate]"
+                      name="ProcessingDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentResubmittedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentResubmittedDate]"
+                      name="DocumentResubmittedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentReviewedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentReviewedDate]"
+                      name="DocumentReviewedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentShippingDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentShippingDate]"
+                      name="DocumentShippingDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApplicationStartedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApplicationStartedDate]"
+                      name="ApplicationStartedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentSubmittalDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DocumentSubmittalDate]"
+                      name="DocumentSubmittalDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[UnderwrittingReceivedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[UnderwrittingReceivedDate]"
+                      name="UnderwrittingReceivedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InitialClosingDisclosureSentDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InitialClosingDisclosureSentDate]"
+                      name="InitialClosingDisclosureSentDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InitialLoanEstimateSentDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InitialLoanEstimateSentDate]"
+                      name="InitialLoanEstimateSentDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InitialLoanEstimateDueDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[InitialLoanEstimateDueDate]"
+                      name="InitialLoanEstimateDueDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ClosingDisclosureRecievedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ClosingDisclosureRecievedDate]"
+                      name="ClosingDisclosureRecievedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DisbursementDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DisbursementDate]"
+                      name="DisbursementDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DenialDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[DenialDate]"
+                      name="DenialDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[QAFailDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[QAFailDate]"
+                      name="QAFailDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[IsConstructionLoan]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[IsConstructionLoan]"
+                      name="IsConstructionLoan" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApprovalStatus]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ApprovalStatus]"
+                      name="ApprovalStatus" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[PropertyOccupancyType]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[PropertyOccupancyType]"
+                      name="PropertyOccupancyType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Closer_Name]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Closer_Name]"
+                      name="Closer_Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Loan_Processor_Name]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Loan_Processor_Name]"
+                      name="Loan_Processor_Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Underwriter_Name]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Underwriter_Name]"
+                      name="Underwriter_Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[MarketSource]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[MarketSource]"
+                      name="MarketSource" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[QAStatus]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[QAStatus]"
+                      name="QAStatus" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[MortgageInsuranceCompany]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[MortgageInsuranceCompany]"
+                      name="MortgageInsuranceCompany" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[TotalFees]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[TotalFees]"
+                      name="TotalFees" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[OriginationFee]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[OriginationFee]"
+                      name="OriginationFee" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ContentType]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ContentType]"
+                      name="ContentType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Modified]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Modified]"
+                      name="Modified" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Created]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Created]"
+                      name="Created" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CreatedById]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[CreatedById]"
+                      name="CreatedById" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ModifiedById]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[ModifiedById]"
+                      name="ModifiedById" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Owshiddenversion]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Owshiddenversion]"
+                      name="Owshiddenversion" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Version]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Version]"
+                      name="Version" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Path]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\OData Source.Outputs[Error output].Columns[Path]"
+                      name="Path" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Keep]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Keep"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[Keep]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Output]"
+              endId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+              name="Output"
+              startId="Package\Data Flow Task\OData Source.Outputs[Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ESQLT_ETL_Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{71CB32CD-28F1-469D-9C5C-2F8598DECFDE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ESQLT_ETL_Log"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{613AD2ED-167C-46FC-9F53-EA2F199CF97E}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::varInsertIntoEtlLog" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="72"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::varSourceName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="System::StartTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::varRowCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::varMaxLastModifiedDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="134"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ESQLT_GetMaxModifiedDate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D08795EE-DB26-42DE-8E04-17F55083CC90}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ESQLT_GetMaxModifiedDate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{690D6C04-9773-4D70-9ABC-A7E5E8FAB80A}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::varMaxLastModifiedDate"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::varSourceName" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="1"
+            SQLTask:DtsVariableName="User::varMaxLastModifiedDate" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="NewParameterName"
+            SQLTask:DtsVariableName="User::varSourceName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EST_DeleteRecordFromSTG"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EBEE9880-957F-405C-A9C8-B8DE103417EC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EST_DeleteRecordFromSTG"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{690D6C04-9773-4D70-9ABC-A7E5E8FAB80A}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::varDeleteLendingQBRecord" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Script Task"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{BA65E8EA-8A3E-40B0-ABFB-76EC56DDE44E}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Script Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_a16fa9a1d7e246f78859ef4747635c88"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="CSharp"
+          ReadOnlyVariables="System::PackageName,System::StartTime,User::varFromEmail,User::varPassword,User::varSmtpClient,User::varSmtpServerPort,User::varSubject,User::varToEmail"
+          ReadWriteVariables="User::varBody">
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a16fa9a1d7e246f78859ef4747635c88.Properties.Settings.get_Default():ST_a16fa9a1d7e246f78859ef4747635c88.Properties.Sett" +
+    "ings")]
+
+namespace ST_a16fa9a1d7e246f78859ef4747635c88.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[ #region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
+
+#endregion
+
+namespace ST_a16fa9a1d7e246f78859ef4747635c88
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+		/// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+		public void Main()
+		{
+            // TODO: Add your code here
+            //System::PackageName,System::StartTime,User::varBody,User::varFromEmail,User::varPassword,
+            //User::varSmtpClient,User::varSmtpServerPort,User::varSubject,User::varToEmail
+            String SendMailFrom = Dts.Variables["User::varFromEmail"].Value.ToString();
+            String SendMailTo = Dts.Variables["User::varToEmail"].Value.ToString();
+            String SendMailSubject= Dts.Variables["User::varSubject"].Value.ToString();
+            String SendMailBody = Dts.Variables["System::PackageName"].Value.ToString() + " " +  Dts.Variables["User::varBody"].Value.ToString()+ Dts.Variables["System::StartTime"].Value.ToString();
+            String SmptClient = Dts.Variables["User::varSmtpClient"].Value.ToString();
+            String Password = Dts.Variables["User::varPassword"].Value.ToString();
+            String Pt=Dts.Variables["User::varSmtpServerPort"].Value.ToString();
+            int port = int.Parse(Pt);
+
+            try
+            {
+                MailMessage email = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("SmtpClient");
+                email.From = new MailAddress(SendMailBody);
+                email.To.Add(SendMailTo);
+                email.Subject = SendMailSubject;
+                email.Body = SendMailBody;
+                SmtpServer.Port = port;
+                SmtpServer.Credentials = new System.Net.NetworkCredential(SendMailFrom, Password);
+                SmtpServer.EnableSsl = true;
+                SmtpServer.Send(email);
+                MessageBox.Show("Email Was Succesfully Sent");
+
+            }
+            catch (Exception ex)
+            
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+
+            }
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+          <ProjectItem
+            Name="ST_a16fa9a1d7e246f78859ef4747635c88.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DAF8DB0A-BF42-45B8-B8C4-97BE16450A7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_a16fa9a1d7e246f78859ef4747635c88</RootNamespace>
+    <AssemblyName>ST_a16fa9a1d7e246f78859ef4747635c88</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_a16fa9a1d7e246f78859ef4747635c88</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_a16fa9a1d7e246f78859ef4747635c88</msb:DisplayName>
+    <msb:ProjectId>{8C4D4D5E-6EE0-43AE-8C75-3E0C17025427}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_a16fa9a1d7e246f78859ef4747635c88.csproj" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_a16fa9a1d7e246f78859ef4747635c88")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_a16fa9a1d7e246f78859ef4747635c88")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a16fa9a1d7e246f78859ef4747635c88.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a16fa9a1d7e246f78859ef4747635c88.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a16fa9a1d7e246f78859ef4747635c88.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_a16fa9a1d7e246f78859ef4747635c88.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_a16fa9a1d7e246f78859ef4747635c88.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_a16fa9a1d7e246f78859ef4747635c88.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDANtaUV8AAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAujIA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAGgyAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAwBIAAAAgAAAAFAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACc
+MgAAAAAAAEgAAAACAAUAjCIAACQPAAABAAAAAAAAALAxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBQC1AQAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKbxQAAAoKAigQAAAKbxEAAApyJwAAcG8SAAAKbxMAAApvFAAACgsCKBAAAApvEQAACnJJAABw
+bxIAAApvEwAACm8UAAAKDAIoEAAACm8RAAAKcmsAAHBvEgAACm8TAAAKbxQAAApykwAAcAIoEAAA
+Cm8RAAAKcpcAAHBvEgAACm8TAAAKbxQAAAoCKBAAAApvEQAACnKzAABwbxIAAApvEwAACm8UAAAK
+KBUAAAoNAigQAAAKbxEAAApy1wAAcG8SAAAKbxMAAApvFAAACiYCKBAAAApvEQAACnL/AABwbxIA
+AApvEwAACm8UAAAKEwQCKBAAAApvEQAACnIjAQBwbxIAAApvEwAACm8UAAAKKBYAAAoTBXMXAAAK
+EwZyUwEAcHMYAAAKEQYJcxkAAApvGgAAChEGbxsAAAoHbxwAAAoRBghvHQAAChEGCW8eAAAKJREF
+bx8AAAolBhEEcyAAAApvIQAACiUXbyIAAAoRBm8jAAAKcmkBAHAoJAAACibeDW8UAAAKKCQAAAom
+3gACKBAAAAoWbyUAAAoqAAAAARAAAAAALwFsmwENEAAAAR4CKCYAAAoqHgIoJwAACiqufgEAAAQt
+HnKfAQBw0AMAAAIoKAAACm8pAAAKcyoAAAqAAQAABH4BAAAEKhp+AgAABCoeAoACAAAEKhp+AwAA
+BCoeAigrAAAKKi5zCAAABoADAAAEKgAAQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAzMTkAAAAABQBs
+AAAAdAQAACN+AADgBAAAeAYAACNTdHJpbmdzAAAAAFgLAAAUAgAAI1VTAGwNAAAQAAAAI0dVSUQA
+AAB8DQAAqAEAACNCbG9iAAAAAAAAAAIAAAFXHaIBCQMAAAD6ATMAFgAAAQAAACgAAAAFAAAABgAA
+AAkAAAABAAAAKwAAAAIAAAAQAAAAAQAAAAIAAAADAAAABAAAAAEAAAAFAAAAAQAAAAEAAAAAALgD
+AQAAAAAABgBGAsYEBgDVAsYEBgCSAbMEDwA6BQAABgC/AU0EBgApAk0EBgAKAk0EBgC8Ak0EBgBm
+Ak0EBgB/Ak0EBgDWAU0EBgDxAQMDCgCaAkUDCgALAUUDDgB9AKgDBgB1BPcDBgAHBPcDBgB1AbME
+BgDlBfcDBgCWBOYEBgCGBDgEDgBFAZIDDgCmAZIDDgAnASMEBgBaAcYECgCAA0UDEgB8BbYAEgCJ
+ALYABgAfA/cDBgABAPcDDgArBqgDDgC8BagDDgBfBKgDDgBuA/gFDgA/BvgFFgBXBp8FFgAPBp8F
+BgDWAPcDBgCSAPcDBgBvBk0EAAAAACsAAAAAAAEAAQABABAAGAQHADkAAQABAAAAEADtBEkFTQAB
+AAMAAAEQAIYFSQVhAAMABwADAQAA0AUAAEUABAAKABEADASqABEA+wCuABEAbQCyAAYGUwC2AFaA
+tAW5AFaA2wC5AFAgAAAAAIYAHgQGAAEAJCIAAAAAhhimBAYAAQAsIgAAAACDGKYEBgABADQiAAAA
+AJMIkgS9AAEAYCIAAAAAkwjjAMIAAQBnIgAAAACTCO8AxwABAG8iAAAAAJYIAwbNAAIAdiIAAAAA
+hhimBAYAAgB+IgAAAACRGKwE0gACAAAAAQD9AgkApgQBABEApgQGABkApgQKACkApgQQADEApgQQ
+ADkApgQQAEEApgQQAEkApgQQAFEApgQQAFkApgQQAGEApgQQAGkApgQGAJEApgQGALkApgQVAMkA
+pgQGAHEAyAUmANEAeAUrANkA7gMwAOEA8wI2AJkAHQM6AOkA3gU+APEAPwFGAHkApgQGAPkApgQQ
+AAEBpgQQAHkA/gNLAHkAfwRSAAkBZAAQAHkA7AUQAHkAYgYQAPkANgYBABEBpgRYAPkAjwVeAPkA
+4ANlAPkAaABqACEBUgZwANEAHAYBAHEApgQGAJkApgQGADEBpAB3ADEBawaAAKEApgSGAMEApgQG
+AAgAFACgAAgAGAClACkAcwANAS4ACwDlAC4AEwDuAC4AGwANAS4AIwAWAS4AKwA/AS4AMwA/AS4A
+OwA/AS4AQwAWAS4ASwBFAS4AUwA/AS4AWwBcAUMAYwClAEkAcwANAWEAewClAGMAawClABsAAwAB
+AAQAAwAAAJYE1gAAAAMB2wAAAAcG4AACAAQAAwACAAUABQABAAYABQACAAcABwAEgAAAAQAAAH8d
+TXgAAAAAAAAHAAAABAAAAAAAAAAAAAAAjgBbAAAAAAAPAAAAAAAAAAAAAACXACYDAAAAAAQAAAAA
+AAAAAAAAAI4A9wMAAAAADwAAAAAAAAAAAAAAlwA0AAAAAAAEAAAAAAAAAAAAAACOAJ8FAAAAAAAA
+AAABAAAA9wQAAAUAAgAAAAAAAEludDMyAFNUX2ExNmZhOWExZDdlMjQ2Zjc4ODU5ZWY0NzQ3NjM1
+Yzg4ADxNb2R1bGU+AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAG1zY29y
+bGliAEFkZABTZW5kAGRlZmF1bHRJbnN0YW5jZQBNYWlsTWVzc2FnZQBWYXJpYWJsZQBSdW50aW1l
+VHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50
+aW1lAFR5cGUARmFpbHVyZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUA
+VlNUQVJUU2NyaXB0T2JqZWN0TW9kZWxCYXNlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAFBhcnNl
+AEVkaXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2Vy
+Tm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVB
+dHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0
+ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRl
+AEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJp
+YnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUA
+U1NJU1NjcmlwdFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0
+ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBnZXRfVmFsdWUAdmFsdWUAU3lzdGVtLlJ1
+bnRpbWUuVmVyc2lvbmluZwBUb1N0cmluZwBNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sA
+TWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBOZXR3b3JrQ3JlZGVudGlh
+bABTY3JpcHRPYmplY3RNb2RlbABTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU3lzdGVtLk5ldC5NYWls
+AFNUX2ExNmZhOWExZDdlMjQ2Zjc4ODU5ZWY0NzQ3NjM1Yzg4LmRsbABzZXRfRW5hYmxlU3NsAGdl
+dF9JdGVtAFN5c3RlbQBzZXRfRnJvbQBFbnVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVt
+LkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ATWFp
+bEFkZHJlc3NDb2xsZWN0aW9uAEV4Y2VwdGlvbgBnZXRfVG8AQ3VsdHVyZUluZm8AZ2V0X1Jlc291
+cmNlTWFuYWdlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1l
+LkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTVF9hMTZmYTlhMWQ3ZTI0NmY3ODg1
+OWVmNDc0NzYzNWM4OC5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9k
+ZXMAU1RfYTE2ZmE5YTFkN2UyNDZmNzg4NTllZjQ3NDc2MzVjODguUHJvcGVydGllcwBnZXRfVmFy
+aWFibGVzAFNldHRpbmdzAHNldF9DcmVkZW50aWFscwBTeXN0ZW0uV2luZG93cy5Gb3JtcwBTdWNj
+ZXNzAE1haWxBZGRyZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBDb25jYXQAT2JqZWN0AHNldF9T
+dWJqZWN0AFN5c3RlbS5OZXQAZ2V0X0RlZmF1bHQARGlhbG9nUmVzdWx0AHNldF9UYXNrUmVzdWx0
+AFNtdHBDbGllbnQAc2V0X1BvcnQASUNyZWRlbnRpYWxzQnlIb3N0AFNob3cATWVzc2FnZUJveABz
+ZXRfQm9keQBnZXRfQXNzZW1ibHkAACVVAHMAZQByADoAOgB2AGEAcgBGAHIAbwBtAEUAbQBhAGkA
+bAAAIVUAcwBlAHIAOgA6AHYAYQByAFQAbwBFAG0AYQBpAGwAACFVAHMAZQByADoAOgB2AGEAcgBT
+AHUAYgBqAGUAYwB0AAAnUwB5AHMAdABlAG0AOgA6AFAAYQBjAGsAYQBnAGUATgBhAG0AZQAAAyAA
+ABtVAHMAZQByADoAOgB2AGEAcgBCAG8AZAB5AAAjUwB5AHMAdABlAG0AOgA6AFMAdABhAHIAdABU
+AGkAbQBlAAAnVQBzAGUAcgA6ADoAdgBhAHIAUwBtAHQAcABDAGwAaQBlAG4AdAAAI1UAcwBlAHIA
+OgA6AHYAYQByAFAAYQBzAHMAdwBvAHIAZAAAL1UAcwBlAHIAOgA6AHYAYQByAFMAbQB0AHAAUwBl
+AHIAdgBlAHIAUABvAHIAdAAAFVMAbQB0AHAAQwBsAGkAZQBuAHQAADVFAG0AYQBpAGwAIABXAGEA
+cwAgAFMAdQBjAGMAZQBzAGYAdQBsAGwAeQAgAFMAZQBuAHQAAHFTAFQAXwBhADEANgBmAGEAOQBh
+ADEAZAA3AGUAMgA0ADYAZgA3ADgAOAA1ADkAZQBmADQANwA0ADcANgAzADUAYwA4ADgALgBQAHIA
+bwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAAAIysQurTO95AtLaaWgD5kywA
+BCABAQgDIAABBSABARERBCABAQ4FIAEBEVkKBwcODg4ODggSPQQgABJpBCAAEm0FIAEScRwDIAAc
+AyAADgcABA4ODg4OBAABCA4GIAEBEoCBBSAAEoCFBSACAQ4OBiABARKAjQQgAQECBSABARI9BgAB
+EYCVDggAARKAmRGAnQUgABKAoQcgAgEOEoChCLd6XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAAAAMG
+ElEDBhJVAwYSEAIGCAMGERQEAAASUQQAABJVBQABARJVBAAAEhADAAABBAgAElEECAASVQQIABIQ
+CAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF9h
+MTZmYTlhMWQ3ZTI0NmY3ODg1OWVmNDc0NzYzNWM4OAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAy
+MDIwAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlO
+YW1lEi5ORVQgRnJhbWV3b3JrIDQuNwAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2Vz
+LlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRy
+YWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50
+aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAJAyAAAAAAAAAAAAAKoyAAAAIAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAACcMgAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxs
+AAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
+SAAAAFhAAAAaBAAAAAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
+AAAAvQTv/gAAAQAAAAEATXh/HQAAAQBNeH8dPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
+AAAAAAAAALAEegMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAwADAA
+MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
+AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
+AABTAFQAXwBhADEANgBmAGEAOQBhADEAZAA3AGUAMgA0ADYAZgA3ADgAOAA1ADkAZQBmADQANwA0
+ADcANgAzADUAYwA4ADgAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+NwA1ADUAMQAuADMAMAA3ADkANwAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABT
+AFQAXwBhADEANgBmAGEAOQBhADEAZAA3AGUAMgA0ADYAZgA3ADgAOAA1ADkAZQBmADQANwA0ADcA
+NgAzADUAYwA4ADgALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAA
+AEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADIAMAAAACoAAQABAEwAZQBnAGEAbABUAHIA
+YQBkAGUAbQBhAHIAawBzAAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBh
+AG0AZQAAAFMAVABfAGEAMQA2AGYAYQA5AGEAMQBkADcAZQAyADQANgBmADcAOAA4ADUAOQBlAGYA
+NAA3ADQANwA2ADMANQBjADgAOAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBl
+AAAAAABTAFQAXwBhADEANgBmAGEAOQBhADEAZAA3AGUAMgA0ADYAZgA3ADgAOAA1ADkAZQBmADQA
+NwA0ADcANgAzADUAYwA4ADgAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAx
+AC4AMAAuADcANQA1ADEALgAzADAANwA5ADcAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYA
+ZQByAHMAaQBvAG4AAAAxAC4AMAAuADcANQA1ADEALgAzADAANwA5ADcAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAvDIAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{78548140-0E92-4DB3-8BC3-9A66E4032CC4}"
+      DTS:From="Package\EST_DeleteRecordFromSTG"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{79C67D43-87BA-4384-8291-E20BDA38D42C}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\ESQLT_GetMaxModifiedDate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{49681040-46DC-4999-BB32-AC7CD5B071C2}"
+      DTS:From="Package\ESQLT_GetMaxModifiedDate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\ESQLT_ETL_Log" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{E7325A15-DBE7-4800-BE88-85E11EDE2D40}"
+      DTS:From="Package\ESQLT_ETL_Log"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Script Task" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -80,5 +2928,241 @@
 <Objects
   Version="8">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="234.285718275576,80.6470598423771" />
+        <NodeLayout
+          Size="208.8,41.6"
+          Id="Package\EST_DeleteRecordFromSTG"
+          TopLeft="14.0714287173991,30.3235296477084" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="222.871428717399,51.1235296477084">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.6142895581773,29.5235301946688"
+              Start="0,0"
+              End="86.6142895581773,22.0235301946688">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="82.6142895581773,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.6142895581773,0"
+                    Point2="86.6142895581773,0"
+                    Point3="86.6142895581773,4" />
+                  <mssgle:LineSegment
+                    End="86.6142895581773,22.0235301946688" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="212,41.6"
+          Id="Package\ESQLT_GetMaxModifiedDate"
+          TopLeft="200.500002809933,157.617648603182" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="307.992860542755,122.247059842377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.3705887608047"
+              Start="0,0"
+              End="0,27.8705887608047">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.8705887608047" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\ESQLT_ETL_Log"
+          TopLeft="131.928573581637,257.088238822548" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="306.500002809933,199.217648603182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96.9714292282962,57.8705902193658"
+              Start="0,0"
+              End="-96.9714292282962,50.3705902193658">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.9352951096829" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.9352951096829"
+                    Point2="0,28.9352951096829"
+                    Point3="-4,28.9352951096829" />
+                  <mssgle:LineSegment
+                    End="-92.9714292282962,28.9352951096829" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-92.9714292282962,28.9352951096829"
+                    Point2="-96.9714292282962,28.9352951096829"
+                    Point3="-96.9714292282962,32.9352951096829" />
+                  <mssgle:LineSegment
+                    End="-96.9714292282962,50.3705902193658" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\Script Task"
+          TopLeft="329.071434081818,322.229416161838" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="209.528573581637,298.688238822548">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="184.74286050018,23.54117733929"
+              Start="0,0"
+              End="184.74286050018,16.04117733929">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.77058866964501" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.77058866964501"
+                    Point2="0,11.770588669645"
+                    Point3="4,11.770588669645" />
+                  <mssgle:LineSegment
+                    End="180.74286050018,11.770588669645" />
+                  <mssgle:CubicBezierSegment
+                    Point1="180.74286050018,11.770588669645"
+                    Point2="184.74286050018,11.770588669645"
+                    Point3="184.74286050018,15.770588669645" />
+                  <mssgle:LineSegment
+                    End="184.74286050018,16.04117733929" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Data Flow Task\OData Source"
+          TopLeft="105.000001788139,7.64705893077651" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="245.714289898775,149.88235504322" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Output]"
+          TopLeft="176.600001788139,49.2470589307765">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146.314288110636,100.635296112443"
+              Start="0,0"
+              End="146.314288110636,93.1352961124434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.3176480562217" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.3176480562217"
+                    Point2="0,50.3176480562217"
+                    Point3="4,50.3176480562217" />
+                  <mssgle:LineSegment
+                    End="142.314288110636,50.3176480562217" />
+                  <mssgle:CubicBezierSegment
+                    Point1="142.314288110636,50.3176480562217"
+                    Point2="146.314288110636,50.3176480562217"
+                    Point3="146.314288110636,54.3176480562217" />
+                  <mssgle:LineSegment
+                    End="146.314288110636,93.1352961124434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="219.285718020128,242.411768105616" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Keep]"
+          TopLeft="322.914289898775,191.48235504322">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-27.2285718786474,50.929413062396"
+              Start="0,0"
+              End="-27.2285718786474,43.429413062396">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.464706531198" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.464706531198"
+                    Point2="0,25.464706531198"
+                    Point3="-4,25.464706531198" />
+                  <mssgle:LineSegment
+                    End="-23.2285718786474,25.464706531198" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.2285718786474,25.464706531198"
+                    Point2="-27.2285718786474,25.464706531198"
+                    Point3="-27.2285718786474,29.464706531198" />
+                  <mssgle:LineSegment
+                    End="-27.2285718786474,43.429413062396" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.0652625018237,30.464706531198,22.901953125,11.2822265625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

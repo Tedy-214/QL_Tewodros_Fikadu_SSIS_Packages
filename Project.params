@@ -79,9 +79,9 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Select SourceName,MAX(LastModifiedDate) As LastModifiedDate From[dbo].[Stg_Tewodros_Fikadu_QL] WHere SourceName=? Group by SourceName</SSIS:Property>
+        SSIS:Name="Value">2020-09-17T06:32:01.9533984-04:00</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
+        SSIS:Name="DataType">16</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
 </SSIS:Parameters>
